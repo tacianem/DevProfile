@@ -3,14 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.rin.devprofile.MainActivity">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/bannerImage"
         android:layout_width="0dp"
-        android:layout_height="300dp"
-        android:scaleType="centerCrop"
+        android:layout_height="150dp"
+        android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -18,10 +17,10 @@
 
     <ImageView
         android:id="@+id/logoImage"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="108dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/devslopesprofilelogo" />
@@ -30,11 +29,10 @@
         android:id="@+id/devslopesText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:text="@string/devs"
-        android:textSize="32sp"
-        android:textStyle="bold"
+        android:textSize="30sp"
         app:layout_constraintStart_toEndOf="@+id/logoImage"
         app:layout_constraintTop_toBottomOf="@+id/bannerImage" />
 
@@ -42,42 +40,54 @@
         android:id="@+id/cameraImage"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/favoriteImage"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toStartOf="@+id/favoriteImage"
-        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintHorizontal_bias="0.98"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toEndOf="@+id/devslopesText"
-        app:layout_constraintTop_toTopOf="@+id/favoriteImage"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintTop_toBottomOf="@+id/bannerImage"
         app:srcCompat="@drawable/camerabutton" />
 
     <ImageView
         android:id="@+id/favoriteImage"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/inboxImage"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cameraImage"
         app:layout_constraintEnd_toStartOf="@+id/inboxImage"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/cameraImage"
-        app:layout_constraintTop_toTopOf="@+id/inboxImage"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toTopOf="@+id/cameraImage"
         app:srcCompat="@drawable/favoritebutton" />
 
     <ImageView
         android:id="@+id/inboxImage"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="44dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/favoriteImage"
+        app:layout_constraintEnd_toStartOf="@+id/customButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/favoriteImage"
-        app:layout_constraintTop_toBottomOf="@+id/bannerImage"
+        app:layout_constraintTop_toTopOf="@+id/favoriteImage"
         app:srcCompat="@drawable/inboxbutton" />
 
+    <Button
+        android:id="@+id/customButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_gradient"
+        android:text="Customize Dashboard"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bannerImage" />
+
     <android.support.constraint.Guideline
-        android:id="@+id/guideline3"
+        android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -87,16 +97,11 @@
         android:id="@+id/dataImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="32dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="44dp"
-        android:clickable="false"
+        android:layout_marginTop="32dp"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/videoImage"
         app:layout_constraintDimensionRatio="16:9"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/logoImage"
         app:srcCompat="@drawable/dataimage" />
 
@@ -104,13 +109,14 @@
         android:id="@+id/videoImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginStart="32dp"
-        android:clickable="false"
+        android:layout_marginTop="32dp"
         android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="16:9"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="@+id/dataImage"
         app:layout_constraintTop_toBottomOf="@+id/dataImage"
         app:srcCompat="@drawable/videosimage" />
 
@@ -118,15 +124,10 @@
         android:id="@+id/picsImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="32dp"
         android:layout_marginStart="16dp"
-        android:clickable="false"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/codeImage"
         app:layout_constraintDimensionRatio="16:9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="@+id/dataImage"
         app:srcCompat="@drawable/imagesimage" />
 
@@ -134,28 +135,14 @@
         android:id="@+id/codeImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
         android:layout_marginStart="16dp"
-        android:clickable="false"
+        android:layout_marginTop="32dp"
         android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="16:9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintEnd_toEndOf="@+id/picsImage"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/picsImage"
         app:srcCompat="@drawable/codeimage" />
-
-    <Button
-        android:id="@+id/customButton"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:background="@drawable/rounded_gradient"
-        android:text="Customize Dashboard"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/videoImage" />
-
 </android.support.constraint.ConstraintLayout>
